@@ -1,0 +1,26 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "This app allows a manager  to generate a webpage that displays their team's basic info for quick access to their emails and GitHub profiles",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --verbose test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NelliaFC/TeamProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NelliaFC/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/NelliaFC/TeamProfileGenerator#readme",
+  "dependencies": {
+    "jest": "^27.1.0"
+  }
+}
