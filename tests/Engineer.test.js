@@ -7,8 +7,7 @@ describe("Engineer", () => {
         expect(typeof(e)).toBe("object");
 
     });
-
-    
+ 
 });
 
 describe("getRole", () => {
@@ -25,4 +24,3 @@ describe("getRole", () => {
          expect(e.getGithub()).toBe(testValue);
      });
  });   
- 
