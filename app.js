@@ -61,6 +61,16 @@ inquirer.prompt([{
         name: "addedMember",
     }
 ])
+.then (({newHire, addedMembers}) =>{
+    var newInstance = ""
+    if(title === "Engineer"){
+    newInstance = new Engineer(name, email, employee_id, newHire)
+
+    }
+
+
+
+})
 
 })
     
