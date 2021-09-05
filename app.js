@@ -3,6 +3,7 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const { resolve } = require("path");
 
 const employees = [];
 
@@ -113,8 +114,8 @@ startHtml(() => {
       });
     
 
-addHtml(member) {
-    return new Promise ((resolve, reject)) {
+ function addHtml(member) {
+    return new Promise(function(resolve,reject) {
         const name = member.getName();
         const title = member.getTitle();
         const employee_id = member.getEmployeeId();
@@ -134,7 +135,7 @@ addHtml(member) {
             </ul>
             </div>
         </div>`;
-        } else if (role === "Intern"){
+        } else if (role === "Intern") {
             const school = member.getSchool();
             data = `
             <div class="col-6">
@@ -147,7 +148,7 @@ addHtml(member) {
             </ul>
             </div>
         </div>`;
-        } else (role === "Manager") {
+        } else {
             const officeNumber = member.getOfficeNumber();
             data = `
             <div class="col-6">
@@ -161,7 +162,28 @@ addHtml(member) {
             </div>
         </div>`;
         }
+        console.log("adding members");
+        fs.appendFile("./dist/team.html", data, function (err) {
+            if(err){
+                return reject(err);
+            };
+            return resolve();
+        });
+    }
+    )};
 
-}};
+ function endHtml() {
+    const html = ` </div>
+    </div>
+    
+</body>
+</html>`;
 
+    fs.appendFile("./dist/team.html", html, function (err) {
+        if (err) {
+            console.log(err);
+        };
+    });
+    console.log("end");
 
+ }
