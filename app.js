@@ -3,7 +3,7 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-//const resolve  = require("path");
+const resolve  = require("path");
 
 const employees = [];
 
@@ -22,7 +22,7 @@ function addMember() {
     {
         type: "list",
         message: "What employee title would you like to add?",
-        choices: ["Engineer, Manager, Intern"],
+        choices: ["Engineer", "Manager", "Intern"],
         name:"title",
    
     },
@@ -57,13 +57,13 @@ inquirer.prompt([{
         name: "titleHire",
 },
     {
-        type: "input",
+        type: "list",
         message: "Would you like to add a new member to the team?",
         choices: ["Yes", "No"],
         name: "addedMember",
     }
 ])
-.then (({titleHire, addedMembers}) =>{
+.then (({titleHire, addedMember}) =>{
     var newInstance = ""
     if(title === "Engineer"){
     newInstance = new Engineer(name, email, employee_id, titleHire)
@@ -76,15 +76,15 @@ inquirer.prompt([{
 
     employees.push(newInstance);
     addHtml(newInstance)
-    .then (() => {
+    .then (function() {
         if (addedMember === "yes"){
             addMember();
         }else {
             endHtml()
         }
-    })
-})
-})
+    });
+});
+});
 }
 
 function startHtml() {
@@ -118,7 +118,7 @@ function startHtml() {
  function addHtml(member) {
     return new Promise(function(resolve,reject) {
         const name = member.getName();
-        const title = member.getTitle();
+        const title = member.gettitleHire();
         const employee_id = member.getEmployeeId();
         const email = member.getEmail();
 
