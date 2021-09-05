@@ -66,16 +66,29 @@ inquirer.prompt([{
     if(title === "Engineer"){
     newInstance = new Engineer(name, email, employee_id, newHire)
 
+    }else if (title ==="Intern") {
+        newInstance = new Intern(name, employee_id,email, newHire);
+    }else {
+        newInstance = new Manager(name, employee_id, email, newHire)
     }
 
-
-
+    employees.push(newInstance);
+    addHtml(newInstance)
+    .then (() => {
+        if (addedMember === "yes"){
+            addMember();
+        }else {
+            endHtml()
+        }
+    })
 })
-
 })
-    
-
-
-
 }
 
+startHtml(() => {
+    const html =`
+    
+    
+    `
+
+})
