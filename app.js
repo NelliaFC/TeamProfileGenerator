@@ -3,7 +3,7 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const { resolve } = require("path");
+//const resolve  = require("path");
 
 const employees = [];
 
@@ -86,7 +86,7 @@ inquirer.prompt([{
 })
 }
 
-startHtml(() => {
+function startHtml() {
     const html =`
     <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +104,7 @@ startHtml(() => {
         <div class="container">
             <div class="row">
       </div> `;
-      fs.writeFile("./dist/team.html",html, function(err){
+      fs.writeFile("./dist/teambuilder.html",html, function(err){
           if (err) {
               console.log(err);
           }
@@ -163,7 +163,7 @@ startHtml(() => {
         </div>`;
         }
         console.log("adding members");
-        fs.appendFile("./dist/team.html", data, function (err) {
+        fs.appendFile("./dist/teambuilder.html", data, function (err) {
             if(err){
                 return reject(err);
             };
@@ -187,3 +187,4 @@ startHtml(() => {
     console.log("end");
 
  }
+ initApp();
