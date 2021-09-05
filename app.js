@@ -11,6 +11,8 @@ function initApp() {
     startHtml();
     addMember();
 }
+
+
 function addMember() {
     inquirer.prompt([{
         type: "input",
@@ -28,32 +30,31 @@ function addMember() {
         type: "input",
         message: "Enter employee ID number",
         name: "employee_id",
-},
+    },
     {
         type: "input",
         message: "Please input employee E-mail",
-        name: "email",
+        name: "email"
 
-},
-    
+    }, 
 ])
 
 .then (({name, title, employee_id, email}) =>{
-    var newHire = ""
+    var titleHire = ""
     if (title === "Intern"){
-        newHire = "school"
-    }
-    else if(title === "Manager"){
-        newHire = "officeNumber"
-    }
-    else {
-        newHire = "github"
+        titleHire = "school";
+
+    }else if(title === "Manager"){
+        titleHire = "officeNumber";
+
+    }else {
+        titleHire = "github";
     }
 
 inquirer.prompt([{
         type: "input",
-        message: `What is this employee's ${newHire}`,
-        name: "newhireInfo",
+        message: `What is this employee's ${titleHire}`,
+        name: "titleHire",
 },
     {
         type: "input",
@@ -62,15 +63,15 @@ inquirer.prompt([{
         name: "addedMember",
     }
 ])
-.then (({newHire, addedMembers}) =>{
+.then (({titleHire, addedMembers}) =>{
     var newInstance = ""
     if(title === "Engineer"){
-    newInstance = new Engineer(name, email, employee_id, newHire)
+    newInstance = new Engineer(name, email, employee_id, titleHire)
 
     }else if (title ==="Intern") {
-        newInstance = new Intern(name, employee_id,email, newHire);
+        newInstance = new Intern(name, employee_id,email, titleHire);
     }else {
-        newInstance = new Manager(name, employee_id, email, newHire)
+        newInstance = new Manager(name, employee_id, email, titleHire)
     }
 
     employees.push(newInstance);
@@ -111,7 +112,7 @@ function startHtml() {
           });
           console.log("start");
 
-      });
+      };
     
 
  function addHtml(member) {
