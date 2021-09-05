@@ -68,9 +68,9 @@ inquirer.prompt([{
     if(title === "Engineer"){
     newInstance = new Engineer(name, email, employee_id, titleHire)
 
-    }else if (title ==="Intern") {
-        newInstance = new Intern(name, employee_id,email, titleHire);
-    }else {
+    } else if (title === "Intern") {
+        newInstance = new Intern(name, employee_id, email, titleHire);
+    } else {
         newInstance = new Manager(name, employee_id, email, titleHire)
     }
 
@@ -79,7 +79,7 @@ inquirer.prompt([{
     .then (function() {
         if (addedMember === "yes"){
             addMember();
-        }else {
+        } else {
             endHtml()
         }
     });
@@ -118,7 +118,7 @@ function startHtml() {
  function addHtml(member) {
     return new Promise(function(resolve,reject) {
         const name = member.getName();
-        const title = member.gettitleHire();
+        const title = member.getTitle();
         const employee_id = member.getEmployeeId();
         const email = member.getEmail();
 
