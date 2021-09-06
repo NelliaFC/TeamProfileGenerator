@@ -150,7 +150,7 @@ function startHtml() {
             </div>
         </div>`;
         } else {
-            const officeNumber = member.getOfficeNumber();
+            const officeNumber = member.getofficeNumber();
             data = `
             <div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
@@ -163,7 +163,7 @@ function startHtml() {
             </div>
         </div>`;
         }
-        console.log("adding members");
+        console.log("Adding a nem Member");
         fs.appendFile("./dist/teambuilder.html", data, function (err) {
             if(err){
                 return reject(err);
@@ -180,12 +180,12 @@ function startHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./dist/team.html", html, function (err) {
+    fs.appendFile("./dist/teambuilder.html", html, function (err) {
         if (err) {
             console.log(err);
         };
     });
-    console.log("end");
+    console.log("member added");
 
  }
  initApp();
