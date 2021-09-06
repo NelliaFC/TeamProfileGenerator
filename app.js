@@ -118,8 +118,8 @@ function startHtml() {
  function addHtml(member) {
     return new Promise(function(resolve,reject) {
         const name = member.getName();
-        const title = member.getTitle();
-        const employee_id = member.getEmployeeId();
+        const title = member.getRole();
+        const employee_id = member.getId();
         const email = member.getEmail();
 
         let data ="";
@@ -136,7 +136,7 @@ function startHtml() {
             </ul>
             </div>
         </div>`;
-        } else if (role === "Intern") {
+        } else if (title === "Intern") {
             const school = member.getSchool();
             data = `
             <div class="col-6">
