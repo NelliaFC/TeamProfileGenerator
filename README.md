@@ -5,7 +5,7 @@
 [Description](#description) <br/>
 [Installation](#installation)<br/>
 [Usage](#usage)<br/>
-[Contributors](#contributors)<br/>
+[Technologies](#technologies)<br/>
 [License](#license)<br/>
 [Test](#test)<br/>
 [Github](#github)<br/>
@@ -13,7 +13,7 @@
 
 ## Description:
     
-   ![Node Questionnaire to add a new member](./src/image/TeamProfileCapture.png?raw=true "inquirer")
+   ![Node Questionnaire to add a new member](/src/image/TeamProfileCapture.png?raw=true "inquirer")
 
    This application is a command-line-input application that uses node.js to run. This app requires user input about a new team member of consisting of either Engineer, Manager or Intern. Once the input is introduced, and HTML file is generated showing the information. 
 
