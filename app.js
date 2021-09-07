@@ -40,7 +40,7 @@ function addMember() {
 ])
 
 .then (({name, title, employee_id, email}) =>{
-    var titleHire = ""
+    let titleHire = ""
     if (title === "Intern"){
         titleHire = "school";
 
@@ -48,7 +48,7 @@ function addMember() {
         titleHire = "officeNumber";
 
     }else {
-        titleHire = "github";
+        titleHire = "github username";
     }
 
 inquirer.prompt([{
@@ -110,7 +110,7 @@ function startHtml() {
               console.log(err);
           }
           });
-          console.log("start");
+          console.log("begin");
 
       };
     
@@ -188,4 +188,5 @@ function startHtml() {
     console.log("member added");
 
  }
+ 
  initApp();
