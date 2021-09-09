@@ -59,7 +59,7 @@ inquirer.prompt([{
     {
         type: "list",
         message: "Would you like to add a new member to the team?",
-        choices: ["Yes", "No"],
+        choices: ["yes", "no"],
         name: "addedMember",
     }
 ])
